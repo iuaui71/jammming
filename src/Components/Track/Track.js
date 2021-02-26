@@ -3,9 +3,9 @@ import React from 'react';
 
 const Track = () => {
 
-    renderAction = () => {
+    const renderAction = () => {
         return (
-            <button className="Track-action">{isRemoval === true ? '-' : '+'}</button>
+            <button className="Track-action">{true === true ? '-' : '+'}</button>
         );
     }
 

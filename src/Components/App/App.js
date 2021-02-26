@@ -1,8 +1,9 @@
 //import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { render } from 'react-dom';
 import SearchBar from '../SearchBar/SearchBar';
+import SearchResult from '../SearchResult/SearchResult';
+import PlayList from '../PlayList/PlayList';
 
 const App = () => {
 
@@ -13,8 +14,8 @@ const App = () => {
         <div className="App">
           <SearchBar />
           <div className="App-playlist">
-            <SearchResults />
-            <Playlist />
+            <SearchResult />
+            <PlayList />
           </div>
         </div>
       </div>
