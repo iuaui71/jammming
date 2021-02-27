@@ -2,12 +2,15 @@ import './TrackList.css';
 import React from 'react';
 import Track from '../Track/Track'
 
-const  TrackList = () => {
+const  TrackList = (props) => {
+    
     return(
         <div className="TrackList">
-            <Track />
-            <Track />
-            <Track />
+            {props.tracks.map(result => 
+                <Track key={result.id} name={result.name} artist={result.artist} album={result.album} 
+                                                isRemoval={props.isRemoval} onAdd={props.onAdd}  id={result.id}/>
+            )
+            }
         </div>
     );
 }

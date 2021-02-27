@@ -1,21 +1,27 @@
 import './Track.css';
 import React from 'react';
 
-const Track = () => {
+const Track = (props) => {
+    
 
-    const renderAction = () => {
-        return (
-            <button className="Track-action">{true === true ? '-' : '+'}</button>
-        );
+    const addTrack = (props) => {
+        const track = {name : props.name, artist: props.artist, album: props.album, id: props.id};
+        props.onAdd(track);
     }
-
+    const handleClick = e => {
+        e.preventDefault();
+        if(props.isRemoval === "false"){
+            addTrack(props);
+        }
+    }
+ 
     return(
         <div className="Track">
             <div className="Track-information">
-                <h3>--track name will go here --</h3>
-                <p>-- track artist will go here-- | -- track album will go here --</p>
-             </div>
-            <button className="Track-action">-- + or - will go here --</button>
+                <h3>{props.name}</h3>
+                <p>{props.artist} | {props.album}</p>
+            </div>
+            {<button className="Track-action" onClick={handleClick}>{props.isRemoval === "true" ? '-' : '+'}</button>}
         </div>
     );
 }
