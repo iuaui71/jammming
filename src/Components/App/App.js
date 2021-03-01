@@ -26,10 +26,9 @@ const App = (props) => {
   }
 
   const search = (term) => {
-    console.log(term);
     const spot = new Spotify();
     const tracks = spot.search(term);
-    console.log(tracks);
+    // luultavasti pitää tässä kohtaa laittaa foreach pyörimään niin saa hieman siistimmän taulukon
     setSearchResults([searchResults, tracks]);
   }
   
