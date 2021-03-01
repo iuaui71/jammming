@@ -12,9 +12,9 @@ const PlayList = (props) => {
     }
     return(
         <div className="Playlist">
-            <input placeholder={playListName} onChange={handleChange}/>
-            <TrackList tracks={props.tracks} isRemoval="true"/>
-            <button className="Playlist-save">SAVE TO SPOTIFY</button>
+            <input defaultValue={playListName} onChange={handleChange}/>
+            <TrackList tracks={props.tracks} isRemoval="true" onRemove={props.onRemove}/>
+            <button className="Playlist-save" onClick={props.onSave}> SAVE TO SPOTIFY</button>
         </div>
     );
 }
