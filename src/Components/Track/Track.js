@@ -2,18 +2,19 @@ import './Track.css';
 import React from 'react';
 
 const Track = (props) => {
-
+    console.log(props)
+    const {isRemoval, onAdd, onRemove} = props;
     const addTrack = (props) => {
         const track = {name : props.name, artist: props.artist, album: props.album, id: props.id};
-        props.onAdd(track);
+        onAdd(track);
     }
     const removeTrack = (props) => {
         const track = {name : props.name, artist: props.artist, album: props.album, id: props.id};
-        props.onRemove(track);
+        onRemove(track);
     }
     const handleClick = e => {
         e.preventDefault();
-        if(props.isRemoval === "false"){
+        if(isRemoval === "false"){
             addTrack(props);
         }
         else{
@@ -27,7 +28,7 @@ const Track = (props) => {
                 <h3>{props.name}</h3>
                 <p>{props.artist} | {props.album}</p>
             </div>
-            {<button className="Track-action" onClick={handleClick}>{props.isRemoval === "true" ? '-' : '+'}</button>}
+            {<button className="Track-action" onClick={handleClick}>{isRemoval === "true" ? '-' : '+'}</button>}
         </div>
     );
 }

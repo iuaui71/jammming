@@ -29,7 +29,9 @@ const App = (props) => {
     const spot = new Spotify();
     const tracks = spot.search(term);
     // luultavasti pitää tässä kohtaa laittaa foreach pyörimään niin saa hieman siistimmän taulukon
-    setSearchResults([searchResults, tracks]);
+    console.log("After search...")
+    console.log(tracks);
+    setSearchResults([...searchResults, tracks]);
   }
   
     return (
@@ -39,7 +41,7 @@ const App = (props) => {
           <SearchBar onSearch={search} />
           <div className="App-playlist">
           <SearchResult tracks={searchResults} onAdd={addTrack}/>
-          <PlayList tracks={playlistTracks} onRemove={removeTrack} onSave={savePlaylist} />
+          <PlayList tracks={playlistTracks} onRemove={removeTrack} onSave={savePlaylist} />          
           </div>
         </div>
       </div>
