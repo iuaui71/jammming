@@ -3,7 +3,7 @@ class Spotify  {
         this._token = '';
         this.expirationTime = 0;
         this.accounts_base_url = 'https://accounts.spotify.com/authorize?';
-        this.client_id = 'client_id=2c96bb9bc4be4e5a945ce836e09f2bd4';
+        this.client_id = 'client_id=mumbo-jumbo';
         this.response_type = '&response_type=token';
         this.redirect_uri = '&redirect_uri=http%3A%2F%2Flocalhost%3A3000';
         this.scope = '&scope=playlist-modify-public';
