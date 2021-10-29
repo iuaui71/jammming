@@ -1,6 +1,6 @@
 class Spotify  {
     constructor(){
-        this._token = '';
+        this._token = 'blahblab';
         this.expirationTime = 0;
         this.accounts_base_url = 'https://accounts.spotify.com/authorize?';
         this.client_id = 'client_id=mumbo-jumbo';
